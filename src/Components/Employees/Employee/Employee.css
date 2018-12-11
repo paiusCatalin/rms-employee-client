@@ -1,0 +1,214 @@
+.employee {
+    color: #4d4d4d;
+    background: white;
+    border-radius: 5px;
+    margin: 30px 40px;
+    border: 1px solid #eee;
+    box-shadow: 0 0.5px 10px #ccc;
+}
+
+.id {
+    color: lightgrey;
+    font-style: italic;
+}
+
+.top {
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px;
+    color: darkgrey;
+}
+
+.top * {
+    display: inline-block;
+}
+
+.down-middle span {
+    display: block;
+}
+
+.edit, 
+.delete {
+    color: #00a86f;
+    width: 25%;
+    padding-top: 50px;
+    vertical-align: top;
+}
+
+.avatar, 
+.avatar * {
+    width: 50%;
+    height: 50%;
+    border-radius: 15px;
+}
+
+.top-middle {
+    margin-bottom: 30px;
+}
+
+.middle{
+    margin-bottom: 60px;
+}
+
+.motto {
+    color: grey;
+    font-style: italic;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.more-details {
+    position: absolute;
+    width: 90%;
+    bottom: 0px;
+    color: #00a86f;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.more-details label {
+    cursor: pointer;
+}
+
+/**
+* Popup
+*/
+.popup-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(170, 170, 170);
+    z-index: 1;
+    opacity: 0.4;
+    overflow: hidden;
+}
+
+.popup {
+    visibility: hidden;
+    width: 75%;
+    background-color: rgb(165, 165, 165);
+    color: #fff;
+    border-radius: 6px;
+    position: fixed;
+    z-index: 1;
+    opacity: 0.9;
+    align-content: center;
+    left: 12%;
+}
+
+.popup.show {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup .info .h6 {
+    padding: 0px 15px;
+    text-align: left;
+}
+
+.popup .right {
+    float: right;
+}
+
+.popup:hover {
+    opacity: 1;
+}
+
+.popup .middle .id,
+.popup .motto,
+.popup .contact label {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    color: #00a86f;
+    text-shadow: 0 0.1px 10px white;
+    padding: 10px 15px;
+}
+/**
+* End popup
+*/
+
+@media only screen and (max-width: 1199px) {
+    .employee {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .top {
+        min-height: 150px;
+    }
+
+    .edit, .delete {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    .employee {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .top {
+        min-height: 100px;
+    }
+
+    .edit, .delete {
+        padding-top: 20px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .popup .top-middle,
+    .popup .middle {
+        margin-bottom: 20px;
+    }
+
+    .popup .middle .id,
+    .popup .motto,
+    .popup .contact label {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 16px;
+        color: #00a86f;
+        text-shadow: 0 0.1px 10px white;
+
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /**
+    * Eliminate the min-height for the content, as we display one card
+    */
+    .top {
+        min-height: 1px;
+    }
+
+    .employee {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .edit, .delete {
+        padding-top: 60px;
+    }
+
+    .popup .info span {
+        display: block;
+        line-height: 1.2em;
+    }
+
+    .popup .right {
+        float: none;
+    }
+}
