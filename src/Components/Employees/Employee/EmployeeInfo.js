@@ -24,8 +24,8 @@ class EmployeeInfo extends React.Component {
         const imageAlt = this.props.employee.name;
 
         return (
-            <div className="popup-initial-container">
-                <div className='popup-container'
+            <div className="popup-container">
+                <div className='popup-shadow'
                     onClick={event => this.props.clicked(event, this.props.employee.id)} >
                 </div>
                 <div className='popup'

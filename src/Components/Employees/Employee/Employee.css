@@ -75,7 +75,7 @@
 * Popup
 */
 
-.popup-container {
+.popup-shadow {
     position: fixed;
     left: 0;
     top: 0;
@@ -104,7 +104,7 @@
     margin: auto;
 }
 
-.popup-initial-container{
+.popup-container{
     left: 0;
     position: fixed;
     z-index: 2;
