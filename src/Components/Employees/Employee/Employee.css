@@ -2,7 +2,7 @@
     color: #4d4d4d;
     background: white;
     border-radius: 5px;
-    margin: 30px 40px;
+    margin: 30px 45px;
     border: 1px solid #eee;
     box-shadow: 0 0.5px 10px #ccc;
 }
@@ -13,7 +13,7 @@
 }
 
 .top {
-    min-height: 200px;
+    min-height: 130px;
     padding: 10px;
     margin: 10px;
     color: darkgrey;
@@ -42,11 +42,11 @@
     border-radius: 15px;
 }
 
-.top-middle {
+.employee .top-middle {
     margin-bottom: 30px;
 }
 
-.middle{
+.employee .middle{
     margin-bottom: 60px;
 }
 
@@ -74,7 +74,6 @@
 /**
 * Popup
 */
-
 .popup-shadow {
     position: fixed;
     left: 0;
@@ -97,7 +96,8 @@
     color: #444;
     background-color:#FFF;
     border-radius: 6px;
-    width: 45%;
+    width: 35%;
+    top: -100px;
     position: relative;
     visibility: visible;
     z-index: 1;
@@ -118,7 +118,7 @@
     }
     to { 
         opacity: 1; 
-        width: 45%;
+        width: 35%;
     }
 }
 
@@ -131,8 +131,9 @@
     float: right;
 }
 
-.popup:hover {
-    opacity: 1;
+.popup img {
+    width: 40%;
+    height: 40%;
 }
 
 .popup .middle .id,
@@ -149,13 +150,8 @@
 */
 
 @media only screen and (max-width: 1199px) {
-    .employee {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-
     .top {
-        min-height: 150px;
+        min-height: 100px;
     }
 
     .edit, .delete {
@@ -165,14 +161,21 @@
     .popup.show {
         width: 55%;
     }
+
+    .employee {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .employee {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
 }
 
 @media only screen and (max-width: 899px) {
-    .employee {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-
     .top {
         min-height: 100px;
     }
@@ -183,11 +186,6 @@
 
     .name {
         font-size: 20px;
-    }
-
-    .popup .top-middle,
-    .popup .middle {
-        margin-bottom: 20px;
     }
 
     .popup .middle .id,
@@ -210,11 +208,6 @@
     */
     .top {
         min-height: 1px;
-    }
-
-    .employee {
-        margin-left: 0px;
-        margin-right: 0px;
     }
 
     .edit, .delete {

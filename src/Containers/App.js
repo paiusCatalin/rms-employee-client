@@ -19,7 +19,7 @@ class App extends Component {
         axios.get('/Files/employees.json').then(response => {
             this.setState({
                 initEmployees: response.data,
-                employees: this.createRows(response.data, 2),
+                employees: this.createRows(response.data, 6),
                 displayEmployeeInfo: false,
                 displayedEmployeeOnPopup: null
             });
@@ -65,7 +65,7 @@ class App extends Component {
         axios.get('/Files/employees.json').then(response => {
             const matchedEmployees = response.data.filter(el => el.name.toLowerCase().includes(searchName));
             this.setState({
-                employees: this.createRows(matchedEmployees, 2)
+                employees: this.createRows(matchedEmployees, 6)
             });
         });
     }

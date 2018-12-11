@@ -7,7 +7,7 @@ const Employee = props => {
     const menuId = 'menu' + props.id;
     const imageAlt = props.name;
     return (
-        <div id={props.id} className='employee col-xs-24 col-sm-12 col-md-5'>
+        <div id={props.id} className='employee col-sm-10 col-md-4 col-lg-3'>
             <div className='top'>
                 <div className='edit'>
                     <i className='material-icons dp48'>edit</i>
