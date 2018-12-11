@@ -21,12 +21,14 @@ class App extends Component {
                 initEmployees: response.data,
                 employees: this.createRows(response.data, 2),
                 displayEmployeeInfo: false,
-                displayedEmployeeOnPopup: null
+                displayedEmployeeOnPopup: null,
+                top: 0,
+                left: 0
             });
         });
     }
 
-    handleMoreDetailsPopup = id => {
+    handleMoreDetailsPopup = (event, id) => {
         if (this.state.displayEmployeeInfo) {
             this.setState({
                 displayEmployeeInfo: false,
@@ -41,12 +43,10 @@ class App extends Component {
         const employee = { ...this.state.initEmployees[employeeIndex] };
         this.setState({
             displayEmployeeInfo: true,
-            displayedEmployeeOnPopup: employee
+            displayedEmployeeOnPopup: employee,
+            top: event.clientY,
+            left: event.clientX
         });
-
-        return <EmployeeInfo
-            employee={employee}
-            clicked={this.handleMoreDetailsPopup} />
     }
 
     createRows = (jsonData, elementsPerRow) => {
@@ -89,7 +89,9 @@ class App extends Component {
                 <EmployeeInfo
                     employee={this.state.displayedEmployeeOnPopup}
                     displaye={this.state.displayEmployeeInfo}
-                    clicked={this.handleMoreDetailsPopup} />
+                    clicked={this.handleMoreDetailsPopup}
+                    top={this.state.top}
+                    left={this.state.left} />
                 {employees}
             </div>
         );

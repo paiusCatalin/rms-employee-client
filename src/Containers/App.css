@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.no-scroll {
+  position: fixed;
+  overflow-y: scroll;
+}
+
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1300px;

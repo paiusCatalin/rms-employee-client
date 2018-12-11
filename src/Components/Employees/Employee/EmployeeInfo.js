@@ -2,8 +2,21 @@ import React from 'react';
 const imagePath = '/images/Assets/[ID].PNG';
 
 class EmployeeInfo extends React.Component {
-    render() {
+    componentDidUpdate() {
+        this.toogleShow();
+    }
 
+    toogleShow = () => {
+        if (this.props.employee) {
+            const popup = document.getElementById(this.props.employee.id + '_info');
+            console.log(popup);
+            if (popup !== null) {
+                popup.classList.toggle('show');
+            }
+        }
+    }
+
+    render() {
         if (!this.props.employee) {
             return null;
         }
@@ -11,13 +24,12 @@ class EmployeeInfo extends React.Component {
         const imageAlt = this.props.employee.name;
 
         return (
-            <div>
+            <div className="popup-initial-container">
                 <div className='popup-container'
-                    id={this.props.employee.id + '_info'}
-                    onClick={event => this.props.clicked(this.props.employee.id)} >
-
+                    onClick={event => this.props.clicked(event, this.props.employee.id)} >
                 </div>
-                <div className='popup show'>
+                <div className='popup'
+                    id={this.props.employee.id + '_info'} >
                     <div className='top'>
                         <div className='avatar'>
                             <img src={imagePath.replace('[ID]', this.props.employee.id)} alt={imageAlt}></img>

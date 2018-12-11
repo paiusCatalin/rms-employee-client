@@ -35,7 +35,7 @@ const Employee = props => {
             </div>
             <div className='floor'>
                 <div className='more-details'>
-                    <label htmlFor={menuId} onClick={event => props.clicked(props.id)}>
+                    <label htmlFor={menuId} onClick={event => props.clicked(event, props.id)}>
                         More details
                     </label>
                 </div>
