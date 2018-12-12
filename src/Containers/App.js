@@ -26,7 +26,7 @@ class App extends Component {
         });
     }
 
-    handleMoreDetailsPopup = (event, id) => {
+    handleMoreDetailsPopup = (props, imagePath) => {
         if (this.state.displayEmployeeInfo) {
             this.setState({
                 displayEmployeeInfo: false,
@@ -35,15 +35,10 @@ class App extends Component {
             return null;
         }
 
-        const employeeIndex = this.state.initEmployees.findIndex(emp => emp.id === id);
-        if (employeeIndex === -1) return null;
-
-        const employee = { ...this.state.initEmployees[employeeIndex] };
+        const employee = { ...props, imagePath: imagePath };
         this.setState({
             displayEmployeeInfo: true,
-            displayedEmployeeOnPopup: employee,
-            top: event.clientY,
-            left: event.clientX
+            displayedEmployeeOnPopup: employee
         });
     }
 
@@ -86,7 +81,6 @@ class App extends Component {
                 <Search changed={this.searchHandler} />
                 <EmployeeInfo
                     employee={this.state.displayedEmployeeOnPopup}
-                    displaye={this.state.displayEmployeeInfo}
                     clicked={this.handleMoreDetailsPopup} />
                 {employees}
             </div>

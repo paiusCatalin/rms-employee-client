@@ -92,7 +92,7 @@
 }
 
 .popup.show {
-    animation: fadeIn 0.25s;
+    animation: fadeIn 0.5s;
     color: #444;
     background-color:#FFF;
     border-radius: 6px;
@@ -199,6 +199,16 @@
     
     .popup.show {
         width: 70%;
+        top: -140px;
+    }
+
+    @keyframes fadeIn {
+        from { 
+            opacity: 0;
+        }
+        to { 
+            opacity: 1; 
+        }
     }
 }
 
